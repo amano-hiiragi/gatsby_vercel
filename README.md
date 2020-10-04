@@ -1,21 +1,30 @@
-![Gatsby Logo](https://github.com/vercel/vercel/blob/master/packages/frameworks/logos/gatsby.svg)
+# Gatsby利用
 
-# Gatsby Example
+## Todo
 
-This directory is a brief example of a [Gatsby](https://www.gatsbyjs.org/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
+- [ ] GrapgQL
+- [ ] React
 
-## Deploy Your Own
+## 環境構築
 
-Deploy your own Gatsby project, along with Serverless Functions, with Vercel.
+## 参考
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/gatsby)
+1. <https://qiita.com/gobo/items/56a13e07516a01caaea1>
+2. [ ] <https://www.gatsbyjs.org/tutorial/>
 
-_Live Example: https://gatsby.now-examples.now.sh_
+### サブディレクトリで公開する場合
 
-### How We Created This Example
+<https://www.gatsbyjs.org/docs/path-prefix/>
 
-To get started with Gatsby on Vercel, you can use the [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) to initialize the project:
+## 実施log
 
-```shell
-$ gatsby new gatsby-site
+```bash
+npx gatsby new gatsby-blog
+cd gatsby-blog
+```
+
+マークダウン記法でページ作成できるトランスフォーマー
+
+```bash
+npm i --save gatsby-transformer-remark
 ```

@@ -1,56 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import '../styles/index.css';
+import React from "react"
+import { graphql, Link } from "gatsby"
+// ↑にgraphqlを。gatsbyがつくってくれてるものなので安心して使います。詳しくは公式に。
+// dataがあったらすぐ「あーgraphqlのことね」とわかってくれるGatsbyの優しさに夢女る。
 
-function Index() {
-  const [date, setDate] = useState(null);
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
+import Layout from "../components/layout"
+import Image from "../components/image"
+import SEO from "../components/seo"
+// Imageも↑のLinkもまだ使っていませんが今後のためにステイさせておいていいとおもいます。
+
+export default ({ data }) => { // export defaultは１コンポーネント１回限り！とかいうので、こんなかんじにしときます
+  console.log(data)　//なくてもいいです、気になったのでいれただけです。
   return (
-    <main>
-      <Helmet>
-        <title>Gatsby + Node.js (TypeScript) API test</title>
-      </Helmet>
-      <h1>Gatsby + Node.js (TypeScript) API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://vercel.com/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Vercel
-        </a>
-        !
-      </h2>
-      <p>
-        <a
-          href="https://github.com/vercel/vercel/blob/master/gatsby"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        is a <a href="https://www.gatsbyjs.org/">Gatsby</a> app with two
-        directories, <code>/src</code> for static content and <code>/api</code>{' '}
-        which contains a serverless{' '}
-        <a href="https://nodejs.org/en/">Node.js (TypeScript)</a> function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Node.js (TypeScript)
-        </a>
-        .
-      </p>
-      <br />
-      <h2>The date according to Node.js (TypeScript) is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
-    </main>
-  );
+    <Layout>
+      <SEO title="Home" />
+      <div>
+        <h1>タイトルとか入れるといい</h1>
+        <h5>{data.allMarkdownRemark.totalCount}</h5>
+        {
+          data.allMarkdownRemark.edges.map(({ node }) => (
+            <div key={node.id}>
+              <h3>{node.frontmatter.title} * {node.frontmatter.date}</h3>
+              <p>{node.excerpt}</p>
+            </div>
+
+          ))
+        }
+      </div>
+
+    </Layout>
+  )
 }
 
-export default Index;
+// ここに queryを定義！！qraphqlしてあげるだけで理解してくれるGatsbyまじサンキュー。
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            description
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
