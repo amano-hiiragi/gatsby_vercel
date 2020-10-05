@@ -1,6 +1,6 @@
 ---
 type: example
-date: 2020-07-30
+date: '2020-10-05'
 slug: 'example-001'
 title: ダミータイトル
 description: ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト

@@ -6,15 +6,13 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-// Imageも↑のLinkもまだ使っていませんが今後のためにステイさせておいていいとおもいます。
 
-export default ({ data }) => { // export defaultは１コンポーネント１回限り！とかいうので、こんなかんじにしときます
-  console.log(data)　//なくてもいいです、気になったのでいれただけです。
+export default ({ data }) => { // export default 1コンポーネント1回限り
   return (
     <Layout>
       <SEO title="Home" />
       <div>
-        <h1>タイトルとか入れるといい</h1>
+        <h1>エラーの積み重ね。Frequent errors.</h1>
         <h5>{data.allMarkdownRemark.totalCount}</h5>
         {
           data.allMarkdownRemark.edges.map(({ node }) => (
