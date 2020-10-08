@@ -13,11 +13,14 @@ export default ({ data }) => { // export default 1コンポーネント1回限�
       <SEO title="Home" />
       <div>
         <h1>エラーの積み重ね。Frequent errors.</h1>
-        <h5>{data.allMarkdownRemark.totalCount}</h5>
+        {/* <h5>{data.allMarkdownRemark.totalCount}</h5> */}
         {
           data.allMarkdownRemark.edges.map(({ node }) => (
             <div key={node.id}>
-              <h3>{node.frontmatter.title} * {node.frontmatter.date}</h3>
+              <Link to={node.frontmatter.path}>
+                <h2>{node.frontmatter.title}</h2>
+              </Link>
+              <p>{node.frontmatter.date}</p>
               <p>{node.excerpt}</p>
             </div>
 
@@ -29,20 +32,29 @@ export default ({ data }) => { // export default 1コンポーネント1回限�
   )
 }
 
-// ここに queryを定義！！qraphqlしてあげるだけで理解してくれるGatsbyまじサンキュー。
 export const query = graphql`
   query {
-    allMarkdownRemark {
-      totalCount
+    allMarkdownRemark(
+      sort: {
+        order: DESC,
+        fields: [frontmatter___date]
+      }
+      filter: {
+        frontmatter: {
+          status: { eq: "published" }
+        }
+      }
+    ){
       edges {
         node {
           id
+          excerpt(pruneLength: 100)
           frontmatter {
+            path
             title
             date
             description
           }
-          excerpt
         }
       }
     }

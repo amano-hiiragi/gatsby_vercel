@@ -13,6 +13,7 @@
 1. <https://qiita.com/gobo/items/56a13e07516a01caaea1>
 2. <https://www.gatsbyjs.org/tutorial/>
 3. <https://qiita.com/so99ynoodles/items/87e136d09644baac634c>
+4. <https://www.howtographql.com/graphql-js/8-filtering-pagination-and-sorting/>
 
 ### サブディレクトリで公開する場合
 

@@ -1,8 +1,9 @@
 ---
-type: example
+path: '/nginx-1'
 date: '2020-10-07'
-slug: 'nginx-1'
-title: 'Laradockを利用時、localhostで"このサイトにアクセスできません"'
+tags: ['nginx', 'docker', Laradock']
+status: 'published'
+title: 'Laradock利用、localhostで"このサイトにアクセスできません"と表示される。'
 description: ''
 ---
 ## nginx: [emerg] "root" directive is duplicate
