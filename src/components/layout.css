@@ -12,7 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* color: hsla(0, 0%, 0%, 0.8); */
   color: hsla(210, 4%, 96%, 0.9);
-  font-family: georgia, serif;
+  font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -409,7 +409,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: hsla(0, 0%, 0%, 0.4);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
