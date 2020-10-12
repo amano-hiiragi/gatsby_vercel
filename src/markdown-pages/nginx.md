@@ -31,4 +31,4 @@ ERR_CONNECTION_REFUSED
 ## 解決方法 <span style="font-size:.5em; opacity:.6;">Solution</span>
 
 結論としては、Laradock内のnginxで .confの設定を間違えていた。  
-dockerの経験も浅いので、解決に辿り着くまでの手順を記録。
+dockerの確認も含めて、解決に辿り着くまでの手順を記録。
