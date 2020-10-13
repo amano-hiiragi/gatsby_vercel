@@ -32,3 +32,5 @@ ERR_CONNECTION_REFUSED
 
 結論としては、Laradock内のnginxで .confの設定を間違えていた。  
 dockerの確認も含めて、解決に辿り着くまでの手順を記録。
+
+<https://qiita.com/You_name_is_YU/items/71f3ec51a19a2361519b>
