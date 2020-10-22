@@ -34,3 +34,20 @@ ERR_CONNECTION_REFUSED
 dockerの確認も含めて、解決に辿り着くまでの手順を記録。
 
 <https://qiita.com/You_name_is_YU/items/71f3ec51a19a2361519b>
+
+### プロセスの確認
+
+```docker
+$ docker-compose ps
+       Name                     Command              State          Ports       
+--------------------------------------------------------------------------------
+php-docker_app_1     docker-php-entrypoint php-fpm   Up       9000/tcp          
+php-docker_mysql_1   docker-entrypoint.sh mysqld     Up                     
+php-docker_web_1     nginx -g daemon off;            Exit 1   0.0.0.0:80->80/tcp
+```
+
+```docker
+$ docker-compose logs
+```
+
+エラー箇所確認
