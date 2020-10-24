@@ -22,7 +22,16 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    // /for markdowns
+    {
+      resolve: `gatsby-remark-autolink-headers`,
+      options: {
+        offsetY: `30`,
+        icon: false,
+        className: `custom-class`,
+        maintainCase: true,
+      },
+    },
+    // end for markdowns
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
