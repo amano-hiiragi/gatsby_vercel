@@ -21,17 +21,13 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       }
     },
-    `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-remark-autolink-headers`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        offsetY: `30`,
-        icon: false,
-        className: `custom-class`,
-        maintainCase: true,
+        plugins: [`gatsby-remark-autolink-headers`],
       },
     },
-    // end for markdowns
+    // /for markdowns
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
