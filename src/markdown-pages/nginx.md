@@ -51,3 +51,9 @@ $ docker-compose logs
 ```
 
 エラー箇所確認
+
+
+no problem :)
+
+42toyko's stackoverflow may help you in the future.
+https://stackoverflow.com/c/42network/questions/1010
